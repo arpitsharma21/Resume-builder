@@ -1,0 +1,19 @@
+.classic-theme .classic-container {
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+.classic-header {
+    font-size: 1.5rem;
+    color: #2a2a2a;
+}
+.classic-subtext {
+    color: #555;
+}
+.classic-section {
+    color: #004085;
+}
+.classic-bold {
+    font-weight: bold;
+    color: #000;
+}

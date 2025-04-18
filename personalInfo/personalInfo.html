@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Personal Information" icon-name="custom:custom63">
+        <div class="slds-p-horizontal_small">
+            <!-- Upload image -->
+            <lightning-input type="file" label="Upload Profile Photo" accept="image/*" onchange={handlePhotoUpload}>
+            </lightning-input>
+            <template if:true={personalInformation.photo}>
+                <p>Image added</p>
+            </template>
+            
+
+            <lightning-input type="text" label="Enter Full Name" data-field="fullName"
+                onchange={handlePerInfoChange}></lightning-input>
+            <lightning-input type="email" label="Enter Email" data-field="email"
+                onchange={handlePerInfoChange}></lightning-input>
+            <lightning-input type="phone" label="Enter Phone" data-field="phone"
+                onchange={handlePerInfoChange}></lightning-input>
+            <lightning-input type="text" label="Enter Address" data-field="address"
+                onchange={handlePerInfoChange}></lightning-input>
+        </div>
+    </lightning-card>
+
+</template>

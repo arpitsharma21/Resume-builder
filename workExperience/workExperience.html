@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Work Experience" icon-name="custom:custom63">
+        <template for:each={experiences} for:item="experience" for:index="index">
+        <div class="slds-p-horizontal_small slds-box slds-m-bottom_small" key={experience.id}>
+            <lightning-input type="text" data-index={index} data-field="title" onchange={handleExpChange} label="Job Title"></lightning-input>
+            <lightning-input type="text" data-index={index} data-field="company" onchange={handleExpChange} label="Company Name"></lightning-input>
+            <lightning-input type="text" data-index={index} data-field="startDate" onchange={handleExpChange} label="Start Date"></lightning-input>
+            <lightning-input type="text" data-index={index} data-field="endDate" onchange={handleExpChange} label="End Date"></lightning-input>
+        </div>
+    </template>
+        <lightning-button variant="brand-outline" label="Add Experience" class="slds-m-around_small" onclick={addExperience}></lightning-button>
+    </lightning-card>
+    
+</template>

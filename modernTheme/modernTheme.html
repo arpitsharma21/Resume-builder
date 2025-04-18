@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Modern Resume" class="modern-theme">
+        <div class="slds-p-around_medium modern-container">
+            <!-- Personal Info -->
+            <div class="slds-m-bottom_medium modern-header">
+                <h2 class="slds-text-heading_large">{personalInfo.fullName}</h2>
+                <p class="slds-text-body_regular">
+                    {personalInfo.email} • {personalInfo.phone} • {personalInfo.address}
+                </p>
+            </div>
+
+            <!-- Education -->
+            <section class="modern-section">
+                <h2>Education</h2>
+                <template for:each={education} for:item="edu">
+                    <div key={edu.id}>
+                        <strong>{edu.degree}</strong> — {edu.institution} ({edu.year})
+                    </div>
+                </template>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="modern-section">
+                <h2>Work Experience</h2>
+                <template for:each={experience} for:item="exp">
+                    <div key={exp.id}>
+                        <strong>{exp.title}</strong> — {exp.company}<br />
+                        <small>{exp.startDate} - {exp.endDate}</small>
+                    </div>
+                </template>
+            </section>
+
+            <!-- Skills -->
+            <section class="modern-section">
+                <h2>Skills</h2>
+                <div class="slds-pill_container">
+                    <template for:each={skill} for:item="sk">
+                        <span key={sk.id} class="slds-pill">{sk.name}</span>
+                    </template>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section class="modern-section">
+                <h2>Summary</h2>
+                <p>{summary}</p>
+            </section>
+        </div>
+    </lightning-card>
+</template>

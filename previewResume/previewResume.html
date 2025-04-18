@@ -1,0 +1,51 @@
+<template>
+    <div class="slds-p-horizontal_medium">
+        <lightning-input type="toggle" label="Show Preview" checked={showContent} onchange={handleToggle}>
+        </lightning-input>
+    </div>
+
+    <template if:true={showContent}>
+        <lightning-card title="Resume Preview">
+             <!-- Theme Picker -->
+        <div class="slds-p-horizontal_medium slds-m-vertical_small">
+            <lightning-combobox
+                label="Select Theme"
+                value={selectedTheme}
+                placeholder="Choose a theme"
+                options={themeOptions}
+                onchange={handleThemeChange}>
+            </lightning-combobox>
+        </div>
+
+
+        <!-- Classic Theme -->
+        <template if:true={isClassic}>
+            <div class="classic-theme slds-p-around_medium">
+                <!-- Classic layout here -->
+                <!-- You can extract the earlier "Classic" layout code here -->
+                <c-classic-theme 
+                    personal-info={personalInfo}
+                    education={education}
+                    experience={experience}
+                    skill={skill}
+                    summary={summary}>
+                </c-classic-theme>
+            </div>
+        </template>
+
+        <!-- Modern Theme -->
+        <template if:true={isModern}>
+            <div class="modern-theme slds-p-around_medium">
+                <c-modern-theme 
+                    personal-info={personalInfo}
+                    education={education}
+                    experience={experience}
+                    skill={skill}
+                    summary={summary}>
+                </c-modern-theme>
+            </div>
+        </template>
+
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Classic Resume" class="classic-theme">
+        <div class="slds-p-around_medium classic-container">
+            <!-- Personal Info -->
+            <div class="slds-m-bottom_medium">
+                <h2 class="slds-text-heading_medium classic-header">{personalInfo.fullName}</h2>
+                <p class="classic-subtext">{personalInfo.email} | {personalInfo.phone} | {personalInfo.address}</p>
+            </div>
+
+            <hr class="slds-m-vertical_small" />
+
+            <!-- Education -->
+            <h2 class="slds-text-heading_small classic-section">Education</h2>
+            <template for:each={education} for:item="edu">
+                <div key={edu.id} class="slds-m-vertical_x-small">
+                    <p class="classic-bold">{edu.degree}</p>
+                    <p>{edu.institution}</p>
+                    <p>{edu.year}</p>
+                </div>
+            </template>
+
+            <hr class="slds-m-vertical_small" />
+
+            <!-- Work Experience -->
+            <h2 class="slds-text-heading_small classic-section">Work Experience</h2>
+            <template for:each={experience} for:item="exp">
+                <div key={exp.id} class="slds-m-vertical_x-small">
+                    <p class="classic-bold">{exp.title}</p>
+                    <p>{exp.company}</p>
+                    <p>{exp.startDate} - {exp.endDate}</p>
+                </div>
+            </template>
+
+            <hr class="slds-m-vertical_small" />
+
+            <!-- Skills -->
+            <h2 class="slds-text-heading_small classic-section">Skills</h2>
+            <ul class="slds-list_dotted">
+                <template for:each={skill} for:item="sk">
+                    <li key={sk.id}>{sk.name}</li>
+                </template>
+            </ul>
+
+            <hr class="slds-m-vertical_small" />
+
+            <!-- Summary -->
+            <h2 class="slds-text-heading_small classic-section">Summary</h2>
+            <p>{summary}</p>
+        </div>
+    </lightning-card>
+</template>

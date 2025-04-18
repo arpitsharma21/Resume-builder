@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Skills" icon-name="custom:custom63">
+        <template for:each={skills} for:item="skill" for:index="index">
+            <div class="slds-p-horizontal_small slds-box slds-m-bottom_small" key={skill.id}>
+                <lightning-input type="text" label="Skill" value={skill.name} onchange={handleSkillChange}
+                 data-index={index}>
+            </lightning-input>
+            </div>
+        </template>
+        <lightning-button variant="brand-outline" label="Add Skill" class="slds-m-around_small" onclick={addSkill}></lightning-button>
+    </lightning-card>
+
+</template>
